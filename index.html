@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Calculator + History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="calculator">
+            <div class="header">
+                <span class="logo">CALC</span>
+                <button class="history-toggle" onclick="toggleHistory()">🕒 History</button>
+            </div>
+            
+            <div class="display">
+                <div id="previous-operand" class="previous-operand"></div>
+                <div id="current-operand" class="current-operand">0</div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-alt" onclick="clearDisplay()">C</button>
+                <button class="btn-alt" onclick="deleteNumber()">DEL</button>
+                <button class="btn-operator" onclick="appendOperator('÷')">÷</button>
+                <button class="btn-operator" onclick="appendOperator('×')">×</button>
+                
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button class="btn-operator" onclick="appendOperator('-')">−</button>
+                
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button class="btn-operator" onclick="appendOperator('+')">+</button>
+                
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button class="btn-equals span-v" onclick="compute()">=</button>
+                
+                <button class="span-two" onclick="appendNumber('0')">0</button>
+                <button onclick="appendNumber('.')">.</button>
+            </div>
+        </div>
+
+        <aside id="history-sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>History</h3>
+                <button class="close-btn" onclick="toggleHistory()">×</button>
+            </div>
+            <div id="history-list" class="history-list">
+                <p class="empty-msg">No calculations yet</p>
+            </div>
+            <button class="clear-history" onclick="clearHistory()">Clear History</button>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
